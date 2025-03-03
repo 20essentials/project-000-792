@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Search Table</title>
+    <meta name="google" content="notranslate" />
+    <link rel="shortcut icon" href="assets/favicon.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input type="text" placeholder="Search..." onkeydown="buscar()">
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Sector IT</th>
+      <th>Código</th>
+    </tr>
+    <tr>
+      <td>Diego</td>
+      <td>Ramirez</td>
+      <td>Design</td>
+      <td>123-456-789</td>
+    </tr>
+    <tr>
+      <td>Lisa</td>
+      <td>Smith</td>
+      <td>Programming</td>
+      <td>987-654-321</td>
+    </tr>
+    <tr>
+      <td>Wei</td>
+      <td>Chen</td>
+      <td>Architecture</td>
+      <td>456-789-123</td>
+    </tr>
+    <tr>
+      <td>Mohammed</td>
+      <td>Khan</td>
+      <td>Development</td>
+      <td>789-123-456</td>
+    </tr>
+    <tr>
+      <td>Anna</td>
+      <td>Petrova</td>
+      <td>IT Support</td>
+      <td>321-654-987</td>
+    </tr>
+    <tr>
+      <td>Juan</td>
+      <td>Garcia</td>
+      <td>Programming</td>
+      <td>654-987-321</td>
+    </tr>
+    <tr>
+      <td>Sophie</td>
+      <td>Martin</td>
+      <td>Design</td>
+      <td>987-123-654</td>
+    </tr>
+    <tr>
+      <td>Kenji</td>
+      <td>Suzuki</td>
+      <td>Development</td>
+      <td>456-789-321</td>
+    </tr>
+    <tr>
+      <td>Isabella</td>
+      <td>Rossi</td>
+      <td>IT Support</td>
+      <td>123-456-987</td>
+    </tr>
+    <tr>
+      <td>Oliver</td>
+      <td>Nielsen</td>
+      <td>Architecture</td>
+      <td>654-321-987</td>
+    </tr>
+    <tr>
+      <td>Maria</td>
+      <td>Hernandez</td>
+      <td>Development</td>
+      <td>789-123-456</td>
+    </tr>
+    <tr>
+      <td>Chen</td>
+      <td>Wei</td>
+      <td>IT Support</td>
+      <td>321-654-789</td>
+    </tr>
+    <tr>
+      <td>Mohammed</td>
+      <td>Al-Farsi</td>
+      <td>Programming</td>
+      <td>987-321-654</td>
+    </tr>
+    <tr>
+      <td>Ayumi</td>
+      <td>Yamamoto</td>
+      <td>Design</td>
+      <td>456-987-123</td>
+    </tr>
+    <tr>
+      <td>Laura</td>
+      <td>Gomez</td>
+      <td>Development</td>
+      <td>123-654-789</td>
+    </tr>
+    <tr>
+      <td>Lucas</td>
+      <td>Costa</td>
+      <td>IT Support</td>
+      <td>789-321-654</td>
+    </tr>
+    <tr>
+      <td>Emma</td>
+      <td>Lindström</td>
+      <td>Programming</td>
+      <td>654-987-123</td>
+    </tr>
+    <tr>
+      <td>Jacques</td>
+      <td>Dubois</td>
+      <td>Design</td>
+      <td>987-123-456</td>
+    </tr>
+    <tr>
+      <td>Thomas</td>
+      <td>Miller</td>
+      <td>Architecture</td>
+      <td>123-456-789</td>
+    </tr>
+    <tr>
+      <td>Yuki</td>
+      <td>Tanaka</td>
+      <td>IT Support</td>
+      <td>987-654-321</td>
+    </tr>
+    <tr>
+      <td>Natalia</td>
+      <td>Garcia</td>
+      <td>Programming</td>
+      <td>456-789-123</td>
+    </tr>
+    <tr>
+      <td>Peter</td>
+      <td>Andersen</td>
+      <td>Development</td>
+      <td>789-123-456</td>
+    </tr>
+    <tr>
+      <td>Amélie</td>
+      <td>Dubois</td>
+      <td>IT Support</td>
+      <td>321-654-987</td>
+    </tr>
+    <tr>
+      <td>Carlos</td>
+      <td>Fernández</td>
+      <td>Design</td>
+      <td>654-987-321</td>
+    </tr>
+    <tr>
+      <td>Mai</td>
+      <td>Nguyen</td>
+      <td>Architecture</td>
+      <td>987-123-654</td>
+    </tr>
+    <tr>
+      <td>David</td>
+      <td>Lee</td>
+      <td>Development</td>
+      <td>456-789-321</td>
+    </tr>
+  </table>
+
+  <script>
+    function buscar() {
+      let $inputValor = document.querySelector("input").value.toUpperCase().trim(),
+      $tr = document.querySelectorAll("tr"), $td;
+      for (let i = 1; i < $tr.length; i++) {
+        $td = $tr[i].querySelectorAll("td");
+        let found = false;
+        for (let j = 0; j < $td.length; j++) {
+          if ($td[j].textContent.toUpperCase().indexOf($inputValor) > -1) {
+            found = true;
+            break;
+          }
+        }
+
+        if (found) {
+          $tr[i].style.display = "";
+        }
+        else {
+          $tr[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+  </body>
+</html>
